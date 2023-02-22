@@ -9,9 +9,9 @@ def main():
 
     customer = pc.Customer(name, address, number, custNum, mailList)
 
-    person = pc.Person(name, address, number)
+    #person = pc.Person(name, address, number)
 
-    person.print_person()
+    #person.print_person()
     customer.print_person()
 
 main()

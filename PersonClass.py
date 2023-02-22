@@ -1,3 +1,5 @@
+# dont make the attributes in super class hidden or keep them hidden and print person from person superclass
+
 class Person:
     def __init__(self, name, address, number):
         self.__name = name
@@ -14,9 +16,9 @@ class Person:
         return self.__number
 
     def print_person(self):
-        print(self.__name)
-        print(self.__address)
-        print(self.__number)
+        print('Name:', self.__name)
+        print('Address:', self.__address)
+        print('Phone:', self.__number)
 
     
 
@@ -35,14 +37,17 @@ class Customer(Person):
         return self.__mailList
 
     def getname(self):
-        return self.__name
+        return self.name
 
     def getaddress(self):
         return self.__address
 
     def print_person(self):
-        # print(self.__name)
-        # print(self.__address)
-        # print(self.__number)
-        print(self.__custNum)
-        print(self.__mailList)
+        Person.print_person(self) # cant just access attributes directly because they're hidden
+        
+        print('Customer number:', self.__custNum)
+        
+        if self.__mailList:
+            print('You are on the mailing list')
+        else:
+            print('You are NOT on the mailing list')
